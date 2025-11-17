@@ -1,69 +1,68 @@
-# Simulador de Algoritmos de Substituição de Páginas
+# Page Replacement Algorithm Simulator
 
-Este projeto é um simulador desenvolvido em Java para a disciplina de Sistemas Operacionais. O objetivo é avaliar e comparar o desempenho de diferentes algoritmos de substituição de páginas, calculando o número total de *page faults* (faltas de página) para uma dada sequência de referências de memória.
+This project is a simulator developed in Java for the Operating Systems course. The goal is to evaluate and compare the performance of different page replacement algorithms by calculating the total number of *page faults* for a given sequence of memory references.
 
-O simulador possui uma interface gráfica (GUI) construída com Java Swing, permitindo ao usuário inserir dados de forma interativa e visualizar os resultados comparativos.
+The simulator features a Graphical User Interface (GUI) built with Java Swing, allowing users to interactively input data and visualize comparative results.
 
-## 📚 Algoritmos Implementados
+## 📚 Implemented Algorithms
 
-O simulador implementa 4 dos principais algoritmos de substituição de páginas:
+The simulator implements 4 of the main page replacement algorithms:
 
-  * **FIFO (First-In, First-Out):** Substitui a página que está na memória há mais tempo.
-  * **LRU (Least Recently Used):** Substitui a página que foi usada menos recentemente.
-  * **Relógio (Clock / Segunda Chance):** Uma implementação mais eficiente que dá uma "segunda chance" a páginas que foram usadas recentemente (usando um bit de referência R).
-  * **Ótimo (Optimal):** O algoritmo ideal (teórico), que substitui a página que demorará mais tempo para ser usada no futuro. Serve como *benchmark* para comparação.
+  * **FIFO (First-In, First-Out):** Replaces the page that has been in memory the longest.
+  * **LRU (Least Recently Used):** Replaces the page that has been used least recently.
+  * **Clock (Second Chance):** A more efficient implementation that gives a "second chance" to recently used pages (using an R reference bit).
+  * **Optimal:** The ideal (theoretical) algorithm that replaces the page that will take the longest to be used in the future. Serves as a *benchmark* for comparison.
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Technologies Used
 
-  * **Java:** Linguagem principal do projeto.
-  * **Java Swing:** Utilizado para a criação da interface gráfica (GUI).
+  * **Java:** Main language of the project.
+  * **Java Swing:** Used for creating the graphical user interface (GUI).
 
-## 🚀 Como Executar o Projeto
+## 🚀 How to Run the Project
 
-### Pré-requisitos
+### Prerequisites
 
-  * Ter o **Java Development Kit (JDK)** versão 8 ou superior instalado e configurado corretamente no seu sistema (com as variáveis de ambiente `JAVA_HOME` e `PATH` definidas).
+  * Have the **Java Development Kit (JDK)** version 8 or higher installed and correctly configured on your system (with `JAVA_HOME` and `PATH` environment variables set).
 
 -----
 
-### Execução (Interface Gráfica - GUI)
+### Execution (Graphical Interface - GUI)
 
-**Opção 1: Via Linha de Comando**
+**Option 1: Via Command Line**
 
-1.  Clone ou baixe este repositório para sua máquina.
-2.  Abra um terminal (Prompt de Comando, PowerShell, Terminal, etc.).
-3.  Navegue até o diretório raiz do projeto (a pasta que contém todos os arquivos `.java`, como `SimuladorGUI.java`, `FIFO.java`, etc.).
-4.  Compile todos os arquivos Java com o seguinte comando:
+1.  Clone or download this repository to your machine.
+2.  Open a terminal (Command Prompt, PowerShell, Terminal, etc.).
+3.  Navigate to the project's root directory (the folder containing all `.java` files, like `SimuladorGUI.java`, `FIFO.java`, etc.).
+4.  Compile all Java files with the following command:
     ```bash
     javac *.java
     ```
-5.  Após a compilação (que irá gerar os arquivos `.class`), execute a classe principal da GUI:
+5.  After compilation (which will generate the `.class` files), run the main GUI class:
     ```bash
     java SimuladorGUI
     ```
 
 -----
 
-### Execução (Versão de Teste - Terminal)
+### Execution (Test Version - Terminal)
 
-O projeto também inclui uma classe `App.java` que roda a simulação diretamente no terminal com valores fixos (Sem GUI).
+The project also includes an `App.java` class that runs the simulation directly in the terminal with fixed values (No GUI).
 
-1.  Siga os passos 1 a 4 da **Opção 1** para compilar os arquivos (`javac *.java`).
-2.  Execute a classe `App`:
+1.  Follow steps 1 to 4 from **Option 1** to compile the files (`javac *.java`).
+2.  Run the `App` class:
     ```bash
     java App
     ```
-    Isso irá imprimir os resultados no console com os dados de teste definidos no código.
+    This will print the results to the console using the test data defined in the code.
 
-## 🖥️ Como Usar a Interface
+## 🖥️ How to Use the Interface
 
-Ao executar o `SimuladorGUI`, a utilização é simples:
+When running `SimuladorGUI`, usage is simple:
 
-1.  **Sequência de Referências:** Insira a cadeia de números (páginas) separada por vírgulas.
-      * *Exemplo:* `7,0,1,2,0,3,0,4,2,3,0,3,2`
-2.  **Nº de Quadros:** Insira o número total de quadros de memória disponíveis (o tamanho da memória física).
-      * *Exemplo:* `3`
-3.  **Simular:** Clique no botão "Simular". Os resultados com as faltas de página para cada algoritmo serão exibidos na área de texto abaixo. O programa também trata entradas inválidas (como letras ou campos vazios).
+1.  **Reference Sequence:** Enter the chain of numbers (pages) separated by commas.
+      * *Example:* `7,0,1,2,0,3,0,4,2,3,0,3,2`
+2.  **Number of Frames:** Enter the total number of available memory frames (physical memory size).
+      * *Example:* `3`
+3.  **Simulate:** Click the "Simulate" button. The results with the page faults for each algorithm will be displayed in the text area below. The program also handles invalid inputs (like letters or empty fields).
 
 -----
-
